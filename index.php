@@ -50,7 +50,7 @@
         $digits = preg_split("//", $count);
         for($i = 0; $i <= $nb_digits; $i++) {
                 if ($digits[$i] != "") {
-                        $html_result .=  "<IMG SRC=\"$IMG_DIR_URL$digits[$i].gif\">";
+                        $html_result .=  "<IMG SRC=\"https://s3.amazonaws.com/damnswank/counter/[$i].gif\">";
                 }
         } 
         echo $html_result; 
