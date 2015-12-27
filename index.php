@@ -21,7 +21,7 @@
 <center><font face=Helvetica><p><br><p><b><h1>
 &nbsp; 
 </h1></b><p><br><p>
-<a href=http://www.damnswank.com/wordpress>
+<a href=http://www.damnswank.com>
 <img src=http://www.damnswank.com/damnswank.gif>
 <p>&copy; 2001-2016 DAMNSWANK<br><p></a>
 
