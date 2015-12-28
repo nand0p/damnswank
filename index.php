@@ -17,7 +17,7 @@
 </script>
 </head>
 
-<body bgcolor=9933CC text=pink vlink=blue>
+<body bgcolor=DD3322 text=pink vlink=blue>
 <center><font face=Helvetica><p><br><p><b><h1>
 &nbsp; 
 </h1></b><p><br><p>
