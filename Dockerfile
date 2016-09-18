@@ -4,8 +4,6 @@ MAINTAINER "Fernando J Pando" <nando@hex7.com>
 
 RUN yum -y install git
 
-RUN git clone https://github.com/nand0p/damnswank.git
-
 RUN curl https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz | tar -C /usr/local -xzf -
 
 ENV PATH ${PATH}:/usr/local/go/bin
@@ -20,6 +18,10 @@ RUN go get github.com/kelseyhightower/app/health
 
 RUN go get github.com/nand0p/app/handlers
 
-RUN go build -o /damnswank damnswank
+RUN git clone https://github.com/nand0p/damnswank.git /damnswank
 
-ENTRYPOINT ["/damnswank"]
+WORKDIR /damnswank
+
+RUN go build -o /damnswank/server .
+
+ENTRYPOINT ["/damnswank/server"]
