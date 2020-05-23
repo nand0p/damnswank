@@ -29,6 +29,6 @@ func DamnswankHandler(w http.ResponseWriter, r *http.Request) {
                    "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script></head>" +
                    "<body bgcolor=" + mutatehex + "><p><br><p><b><h1>&nbsp;</h1></b><p><br><p><center>" +
                    "<img src=https://s3.amazonaws.com/damnswank/damnswank.gif><font color=" + mutatehex + ">" +
-                   mutatehex + "</font><p><font color=" + basecolor + ">&copy; 2001-2016&nbsp;</font>" +
+                   mutatehex + "</font><p>SEDME<p><font color=" + basecolor + ">&copy; 2001-2020&nbsp;</font>" +
                    "<a href=http://www.damnswank.com>DAMNSWANK</a><br><p></body></html>")
 }
