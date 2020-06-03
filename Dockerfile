@@ -1,28 +1,26 @@
-FROM centos:7
+FROM golang:alpine
 
 MAINTAINER "nando" <nando@hex7.com>
 
 ARG DATE
 ARG REVISION
 
-RUN yum install git -y
-RUN curl https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+RUN apk add --no-cache git
 
-ENV PATH ${PATH}:/usr/local/go/bin
-ENV GOPATH /usr/local/go/vendor
+ENV GOPATH /go
+ENV PATH /go/bin:$PATH
 
-RUN mkdir -pv /usr/local/go/vendor
-RUN mkdir -pv /damnswank
+RUN mkdir -pv ${GOPATH}/src ${GOPATH}/bin
 
 RUN go version
-
 RUN go get github.com/braintree/manners
 RUN go get github.com/kelseyhightower/app/health
 
-COPY . /damnswank
-WORKDIR /damnswank
+COPY . ${GOPATH}
+WORKDIR ${GOPATH}
+
 RUN sed -i "s|SEDME|$REVISION -- $DATE|g" handlers/damnswank.go
 RUN cat handlers/damnswank.go
-RUN go build -o /damnswank/server .
+RUN go build -o ${GOPATH}/server .
 
-ENTRYPOINT ["/damnswank/server"]
+ENTRYPOINT ["/go/server"]
